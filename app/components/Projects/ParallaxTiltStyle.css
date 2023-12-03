@@ -1,0 +1,32 @@
+.hero{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+.outer{
+    height: 18.75rem;
+    width: 18.75rem;
+    display: grid;
+    align-items: end;
+    background-color: blue;
+    transform-style:preserve-3d;
+    transform: perspective(2000px);
+
+    
+}
+.inner{
+    width: fit-content;
+    color: white;
+    transform: translateZ(20px) translateX(-3.125rem);
+    padding-bottom: 20px;
+}
+.inner h1{
+    padding-bottom:10px;
+}
+.inner p{
+    padding-top: 10px;
+}
