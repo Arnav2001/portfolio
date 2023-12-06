@@ -1,0 +1,7 @@
+.outside{
+    transform-style:preserve-3d;
+    transform: perspective(125rem);  
+}
+img{
+    transform: translateZ(1.25rem)
+}

@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width:{
+        1:'1px',
+        550:'550px'
+      },
+      zIndex:{
+        9000:'9000'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -18,7 +25,10 @@ const config: Config = {
         customPurple:"#5C5470",
         customLightPurple:"#B9B4C7",
         customCream:"#FAF0E6"
-      }
+      },
+      fontSize:{
+        30:'1.875rem'
+      },
     },
   },
   plugins: [],

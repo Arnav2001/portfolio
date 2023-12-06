@@ -1,0 +1,17 @@
+.cursor-follower {
+    position: fixed;
+    pointer-events: none;
+    transition: transform 0.3s ease-out; /* Update to only apply transition to transform */
+  }
+  
+  .cursor-follower .content {
+    background-color: #3498db;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .cursor-follower.expanded .content {
+    transform: scale(1.2);
+  }
+  

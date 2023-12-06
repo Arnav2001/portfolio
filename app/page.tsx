@@ -7,16 +7,14 @@ import Experience from './components/Experience/experience'
 import Project from './components/Projects/project';
 import Achievement from './components/Achievements/achievement'
 import Roles_Res from './components/Roles&Resp/role&res'
+import MouseTracker from './mouseMovingAnimation/mouseMovingAnimation'
+import Skills from './components/skills/skills'
 export default function Home() {
   return (
-    <main className="p-0 m-0 overflow-y-visible h-screen w-screen ">
-      {/* <ParallaxTilt>
-      <div className="content">
-        <h1>Name</h1>
-        <p>sub heading</p>
-      </div>
-    </ParallaxTilt> */}
+    <main className="p-0 m-0 overflow-y-visible h-screen w-full">   
+    {/* <MouseTracker/> */}
 <About/>
+{/* <Skills/> */}
 <Education/>
 <Experience/>
 <Project/>

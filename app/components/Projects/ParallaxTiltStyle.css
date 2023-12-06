@@ -1,7 +1,6 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-color: black;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -14,19 +13,21 @@
     align-items: end;
     background-color: blue;
     transform-style:preserve-3d;
-    transform: perspective(2000px);
-
-    
+    transform: perspective(125rem);    
 }
 .inner{
     width: fit-content;
-    color: white;
-    transform: translateZ(20px) translateX(-3.125rem);
-    padding-bottom: 20px;
+    color: black;
+    font-weight: bold;
+    transform: translateZ(1.25rem) translateX(-3.125rem);
+    padding-bottom: 1.25rem;
 }
 .inner h1{
-    padding-bottom:10px;
+    padding-bottom:.625rem;
 }
 .inner p{
-    padding-top: 10px;
+    padding-top: .625rem;
+}
+.inner hr{
+    background-color: black;
 }
