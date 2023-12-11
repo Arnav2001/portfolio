@@ -1,0 +1,6 @@
+.bg-img {
+    background-image: url('/assets/background.webp');
+    /* Additional background properties */
+    background-size: cover;
+    background-position: center;
+  }

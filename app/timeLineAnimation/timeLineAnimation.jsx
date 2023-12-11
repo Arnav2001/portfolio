@@ -1,35 +1,45 @@
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-const TimeLineAnimation = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-  });
+const TimeLineAnimation = ({ inView, maxHeight }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [initialScroll, setInitialScroll] = useState(0);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+
 
     const handleScroll = () => {
       if (inView) {
         const currentScrollY = window.scrollY;
-        setScrollPosition(currentScrollY-lastScrollY);
+        let scrollDelta = 0;
+        if(initialScroll<currentScrollY){
+         scrollDelta = currentScrollY - initialScroll;
+      }else{
+        scrollDelta = maxHeight-(initialScroll - currentScrollY);
+      }
+        setScrollPosition(scrollDelta >= 0 ? scrollDelta : 0);
+        console.log(maxHeight,scrollDelta);
+      }else{
 
-        // Update lastScrollY for the next comparison
       }
     };
+
+    // Set the initial scroll position when the component is mounted
+    setInitialScroll(window.scrollY);
 
     // Attach the scroll event listener when the component is in view
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener when the component unmounts
+    // Clean up the event listener when the component unmounts or is out of view
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [inView]);
+  }, [inView, initialScroll]);
 
   return (
-    <div ref={ref} className="bg-customCream w-1" style={{ height: `${scrollPosition}px` }}></div>
+    <div
+      className="bg-customCream w-2"
+      style={{ height: `${Math.min(maxHeight, scrollPosition)}px` }}
+    />
   );
 };
 

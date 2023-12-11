@@ -5,21 +5,19 @@ import About from './components/About/about';
 import Education from './components/Education/education'
 import Experience from './components/Experience/experience'
 import Project from './components/Projects/project';
-import Achievement from './components/Achievements/achievement'
-import Roles_Res from './components/Roles&Resp/role&res'
+import Achievements from './components/Achievements/achievement'
 import MouseTracker from './mouseMovingAnimation/mouseMovingAnimation'
 import Skills from './components/skills/skills'
 export default function Home() {
   return (
-    <main className="p-0 m-0 overflow-y-visible h-screen w-full">   
+    <main className="p-0 m-0 bg-customDarkPurple overflow-y-visible h-screen w-full">   
     {/* <MouseTracker/> */}
 <About/>
-{/* <Skills/> */}
+<Skills/>
 <Education/>
 <Experience/>
 <Project/>
-    <Achievement/>
-    <Roles_Res/>
+    <Achievements/>
     </main>
   )
 }

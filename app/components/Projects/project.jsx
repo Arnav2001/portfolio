@@ -1,36 +1,62 @@
-import React, { useEffect, useRef } from "react";
-import './ParallaxTiltStyle.css';
-import AnimatedHeaderClose from "@/app/textAnimation/animatedHeaderClose";
-import AnimatedHeaderOpen from "@/app/textAnimation/animatedHeaderOpen";
+import React, { useState, useEffect } from 'react';
+import { projects } from '@/app/data/data';
+
 const Project = () => {
-  const tiltRef = useRef();
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const vanillaTilt = require('vanilla-tilt');
-    vanillaTilt.init(tiltRef.current, {
-      glare: true,
-      "max-glare": 0.8,
-      scale: 1.1,
-    });
+    // Set initial mouse position
+    setMousePosition({ x: window.innerWidth, y: window.innerHeight });
   }, []);
-  const originalText = "Projects";
+
+  const handleHover = (projectIndex) => () => {
+    setHoveredProject(projectIndex);
+  };
+
+  const handleMouseOut = () => {
+    setHoveredProject(null);
+  };
+
+  const updateMousePosition = (event) => {
+    if (event) {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    }
+  };
+
   return (
-    <div className="bg-customDarkPurple flex h-full w-full p-4">
-        <div className='flex flex-col'>
-        <AnimatedHeaderOpen originalText={originalText} />
-        <div className="flex-1 bg-customCream w-1" />
-        <AnimatedHeaderClose originalText={originalText} />
-      </div>
-      <div className="outer" ref={tiltRef}>
-        <div className="inner">
-          <h1>
-            Arnav Kulshrestha
-          </h1>
-          <hr/>
-          <p>
-            Full Stack developer
-          </p>
-        </div>
+    <div className="items-center flex flex-col bg-customDarkPurple w-full">
+      {/* Div to trigger hover effect */}
+      <div className="w-1200 flex flex-col gap-3">
+        {projects.map((project, index) => (
+          <div key={index}>
+            <div
+              className="p-2 bg-gray-300 rounded-xl"
+              onMouseOver={handleHover(index)}
+              onMouseMove={updateMousePosition}
+              onMouseOut={handleMouseOut}
+            >
+              <h1>{project.name}</h1>
+            </div>
+
+            {/* Sticky div */}
+            {hoveredProject === index && (
+              <div
+                style={{
+                  position: 'fixed',
+                  top: mousePosition.y + 'px',
+                  left: mousePosition.x + 10 + 'px',
+                  backgroundImage: `url(${project.imgUrl})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '200px', // Adjust to your needs
+                  width: '200px', // Adjust to your needs
+                }}
+                className="bg-gray-800 text-white rounded-lg"
+              ></div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

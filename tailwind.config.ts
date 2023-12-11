@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       width:{
         1:'1px',
-        550:'550px'
+        550:'34.375vw',
+        800:'50vw',
+        1200:'75vw'
+      },
+      height:{
+        1000:'70vh'
       },
       zIndex:{
         9000:'9000'
