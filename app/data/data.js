@@ -75,10 +75,16 @@ const skills = [
   ];
 
   const projects = [
-    {name:'project 1', imgUrl:'assets/background.webp'},
-    {name:'project 2', imgUrl:'assets/javaScript.png'},
-    {name:'project 3', imgUrl:'assets/nodejs.svg'},
-    {name:'project 4', imgUrl:'assets/tailwind.svg'},
-  ]
+    { name: 'Code World (Android App)',
+     description: 'Android app built with Flutter (Dart) and Firebase.',
+    technologies: ['Flutter', 'Dart', 'Firebase'], 
+    date: '04/2021 – 06/2021',
+    links: { playStore: 'PlayStore Link', github: 'GitHub Link' } },
+    { name: 'Fluttered (Website)', 
+    description: 'Developed using React, MongoDB, ExpressJs, and Nodejs.',
+     technologies: ['React', 'MongoDB', 'ExpressJs', 'Nodejs'],
+      date: '08/2023 – 09/2023', links: {} },
+    // Add more projects as needed
+  ];
   export { skills, educationList, experiences, projects };
   
