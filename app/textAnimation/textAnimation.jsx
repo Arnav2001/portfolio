@@ -2,9 +2,9 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from 'react';
 
-const AnimatedHeaderOpen = ({ originalText }) => {
+const TextAnimation = ({ originalText }) => {
   const [ref, inView] = useInView({
-    triggerOnce:false,
+    triggerOnce:true,
   });
 
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -40,11 +40,11 @@ const AnimatedHeaderOpen = ({ originalText }) => {
 
   return (
       <div ref={ref} className="tags flex">
-        <h1 className=' text-customLightPurple text-lg font-bold'>&lt;</h1>
+        {/* <h1 className=' text-customLightPurple text-lg font-bold'>&lt;</h1> */}
         <h1 ref={h1Ref} className=' text-customLightPurple text-lg font-bold'>{animatedText}</h1>
-        <h1 className=' text-customLightPurple text-lg font-bold'>&gt;</h1>
+        {/* <h1 className=' text-customLightPurple text-lg font-bold'>&gt;</h1> */}
       </div>
   );
 };
 
-export default AnimatedHeaderOpen;
+export default TextAnimation;

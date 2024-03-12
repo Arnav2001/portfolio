@@ -1,56 +1,61 @@
-import React, { useEffect, useState, useRef } from 'react';
-import TimeLineAnimation from '@/app/timeLineAnimation/timeLineAnimation';
-import { useInView } from 'react-intersection-observer';
-import { experiences } from '@/app/data/data';
-import { useScroll, motion } from 'framer-motion';
+// Experience.js
+import React from 'react';
+import './experience.css';
+
 const Experience = () => {
-  const ref = useRef(null);
-  const {scrollProgress} = useScroll({
-    target: ref,
-    offset:["start end", "center start"]
-  });
-  // const [ref, inView] = useInView({
-  //   triggerOnce: false,
-  // });
-
-  // const [maxHeight, setMaxHeight] = useState(0);
-  // const timelineParentRef = useRef(null);
-
-  // useEffect(() => {
-  //   // Accessing the DOM element after the component is mounted
-  //   const timelineParentElement = timelineParentRef.current;
-
-  //   if (timelineParentElement) {
-  //     setMaxHeight(timelineParentElement.clientHeight);
-  //   }
-  // }, []);
-
   return (
-    <div className='bg-customDarkPurple h-fit flex item-center justify-center w-full p-4'>
-      <div ref={ref} className='timeline-parent flex item-center justify-center w-1200 h-fit'>
-      <motion.div 
-      style={{scaleY:scrollProgress}}
-      className=' bg-customCream mr-4 w-2'/>
-        <div className="flex-1 flex flex-col gap-4">
-      <h1>Professional Experience</h1>
-      {experiences.map((exp, index) => (
-        <div key={index} className='text-customCream'>
-          <h2>{exp.company}</h2>
-          <p>{exp.role}</p>
-          <p>{exp.date}</p>
-          <ul>
-            {exp.details.map((detail, i) => (
-              <li key={i}>{detail}</li>
-            ))}
-          </ul>
+    <div className=' bg-customDarkPurple flex flex-col  w-full items-center'>
+        
+        <div className=' mainDiv flex flex-col items-center bg-customCream w-full'>
+        <h1 className=' pt-10 font-bold text-7xl text-gray-600'>EXPERIENCE</h1>
+    <div className="timeline m-0 w-1200">
+        <div className="container left-container">
+            <img src="/assets/logo1.jpg"/>
+            <div className="text-box">
+                <h2>Pina Systems</h2>
+                <small>May 2021-october 2021</small>
+                <p>
+                    Build frontend and backend and added features like Login, Search, Chart and Dashboard, worked on REST API, Flutter (Dart). Fixed few bugs in app.
+                </p>  
+                <span className="left-container-arrow"></span>          
+            </div>
         </div>
-      ))}
+        <div className="container right-container">
+            <img src="/assets/logo2.jpg"/>
+            <div className="text-box">
+                <h2>Department of Information Technology & Communication</h2>
+                <small>July 2022-December 2022</small>
+                <p>
+                    Developed an application to provide funding to startups by government of Rajasthan. Worked on technology like Flutter, Dart build frontend and backend using API.
+                </p>  
+                <span className="right-container-arrow"></span>          
+            </div>
         </div>
-        {/* <TimeLineAnimation inView={inView} maxHeight={maxHeight} />
-        <div className='flex-1 flex items-center'>
-          <div ref={ref} className=' bg-black ml-4 h-1000'/>
-        </div> */}
-      </div>
+        <div className="container left-container">
+            <img src="/assets/logo3.png"/>
+            <div className="text-box">
+                <h2>Doctunes</h2>
+                <small>July 2023-August 2023</small>
+                <p>
+                    Utilized Flutter (Dart), Firebase, and REST API.Enabled web scraping in Flutter using HTTP and HTML and Integrated Google Drive API for document retrieval.Designed UI for Forgot Password and Google Drive. Getting traffic of 85k per month which boost company overall revenue by 40%.
+                </p>  
+                <span className="left-container-arrow"></span>          
+            </div>
+        </div>
+        <div className="container right-container">
+            <img src="/assets/logo4.jpg"/>
+            <div className="text-box">
+                <h2>Phone Panchayat</h2>
+                <small>August 2023-December 2023</small>
+                <p>
+                    Lead developer of Phone Panchayat app using Flutter with a microservices-based backend.Achieving 300,000+ downloads, a 30% user increase post-update, and winning the Rajasthan Social Impact Champion Award.Used technologies such as Flutter, AWS, Lamda functions, Dynamo db, REST API.
+                </p>
+                <span className="right-container-arrow"></span>              
+            </div>
+        </div>
+    </div>
+    </div>
+    <img src="/assets/creamWave.svg" alt="" />
     </div>
   );
 };

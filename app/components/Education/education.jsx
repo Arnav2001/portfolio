@@ -2,10 +2,14 @@ import './educationStyle.css'
 import {educationList} from '../../data/data';
 const Education = () => {
   return (
-<div className=' p-4 h-screen flex flex-col justify-center items-center w-full bg-customDarkPurple'>
-  <div className='bg-img border flex flex-col rounded-3xl border-solid bg-white border-customLightPurple w-1200 h-96'>
-
-    <div className='p-4 translate-y-5 gap-2 flex flex-col justify-center items-center h-full'>
+    <div className=' bg-customCream w-full'>
+      <img src="/assets/blueWave.svg" alt="purple Wave"/>
+    
+<div className=' p-4 flex flex-col justify-center items-center w-full bg-customCream'>
+<h1 className=' font-bold text-7xl text-center mb-4 text-gray-600'>EDUCATION</h1>
+  <div className='bg-img border flex flex-col rounded-3xl border-solid bg-white border-customLightPurple w-1200 mb-8'>
+    <div className='p-4 translate-y-5 gap-2 flex flex-col justify-center items-center h-fit'>
+      
       {
         educationList.map((education, index)=>(
           <div key={index} className='w-full pb-5 rounded-3xl p-4 bg-white opacity-60'>
@@ -16,6 +20,7 @@ const Education = () => {
           </div>
         ))
       }
+
     </div>
 
     <div className='w-full h-fit flex justify-end items-end translate-x-12 translate-y-6'>
@@ -23,7 +28,8 @@ const Education = () => {
     </div>
 
   </div>
-</div>
+  </div>
+  </div>
   );
 };
 
