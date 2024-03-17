@@ -25,14 +25,14 @@ const skills = [
     {
       institution: 'Tilak Public School, Jaipur',
       degree: '12TH Boards',
-      duration: 'Mar 2017 - Mar 2019',
+      duration: 'May 2018 - May 2019',
       grade: '72.4% in CBSE',
     },
     {
       institution: 'Ryan International School, Jaipur',
       degree: '10TH Boards',
-      duration: 'Mar 2017 - Mar 2019',
-      grade: '72.4% in CBSE',
+      duration: 'June 2016 - June 2017',
+      grade: 'CGPA - 7.2',
     },
   ];
   const experiences = [
