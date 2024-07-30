@@ -37,6 +37,12 @@ const config: Config = {
       fontSize:{
         30:'1.875rem'
       },
+      backgroundColor:{
+        customViolet:"#401F71",
+      },
+      fontFamily: {
+        'pt-mono': ['"PT Mono"', 'monospace'],
+      },
     },
   },
   plugins: [],
